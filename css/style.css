@@ -1,0 +1,268 @@
+/* ===== Fuentes de Google (según propuesta del caso) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap');
+
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFF5E1; /* Crema Pastel */
+    color: #5D4037; /* Marrón oscuro */
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: #8B4513; /* Chocolate */
+}
+
+a {
+    text-decoration: none;
+    color: #5D4037;
+}
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #FFC0CB; /* Rosa suave */
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo img {
+    width: 45px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a:hover {
+    color: #8B4513;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.carrito {
+    background-color: #8B4513;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    gap: 20px;
+}
+
+.hero-texto {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-texto h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero-texto p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-imagen img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #FFC0CB;
+    color: #5D4037;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: #8B4513;
+    color: white;
+}
+
+/* ===== Productos ===== */
+.destacados {
+    padding: 30px;
+}
+
+.destacados h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #5D4037;
+    font-weight: bold;
+}
+
+.precio {
+    color: #B0BEC5;
+    margin: 8px 0;
+}
+
+.boton-secundario {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.boton-secundario:hover {
+    background-color: #5D4037;
+}
+
+/* ===== Video ===== */
+.video {
+    text-align: center;
+    padding: 30px;
+}
+
+.video iframe {
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+/* ===== Formularios ===== */
+.formulario {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #B0BEC5;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+}
+
+.error {
+    color: #c0392b;
+    font-size: 13px;
+    margin-top: 4px;
+    display: none;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #8B4513;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+    .producto {
+        width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 24px;
+    }
+}
