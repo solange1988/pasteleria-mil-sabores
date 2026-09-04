@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Pastelería Mil Sabores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores">
+            <span>Pastelería Mil Sabores</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="acciones">
+            <a href="login.html">Iniciar sesión</a> |
+            <a href="registro.html">Registrarse</a>
+            <a href="carrito.html" class="carrito">🛒 Cart (0)</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <h1>Contáctanos</h1>
+            <p>¿Tienes dudas sobre un pedido o quieres cotizar una torta especial? Escríbenos.</p>
+
+            <form id="contactoForm" novalidate>
+
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error" id="errorNombre"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" required>
+                    <span class="error" id="errorCorreo"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto</label>
+                    <select id="asunto" name="asunto">
+                        <option value="cotizacion">Cotización de torta</option>
+                        <option value="pedido">Estado de mi pedido</option>
+                        <option value="reclamo">Reclamo o sugerencia</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    <span class="error" id="errorMensaje"></span>
+                </div>
+
+                <button type="submit" class="boton-secundario">Enviar mensaje</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pastelería Mil Sabores &copy; 2026 - Equipo [nombre del equipo]</p>
+        <p><a href="nosotros.html">Nosotros</a> | <a href="index.html">Home</a></p>
+    </footer>
+
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
