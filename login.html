@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Pastelería Mil Sabores</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores">
+            <span>Pastelería Mil Sabores</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="acciones">
+            <a href="login.html">Iniciar sesión</a> |
+            <a href="registro.html">Registrarse</a>
+            <a href="carrito.html" class="carrito">🛒 Cart (0)</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores" style="width:80px; display:block; margin:0 auto 15px;">
+            <h1 style="text-align:center;">Pastelería Mil Sabores</h1>
+
+            <form id="loginForm" novalidate>
+
+                <div class="campo">
+                    <label for="correoLogin">Correo</label>
+                    <input type="email" id="correoLogin" name="correoLogin" maxlength="100" required>
+                    <span class="error" id="errorCorreoLogin"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasenaLogin">Contraseña</label>
+                    <input type="password" id="contrasenaLogin" name="contrasenaLogin" required>
+                    <span class="error" id="errorContrasenaLogin"></span>
+                </div>
+
+                <button type="submit" class="boton-secundario">Iniciar sesión</button>
+
+            </form>
+
+            <p style="text-align:center; margin-top:15px;">
+                ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pastelería Mil Sabores &copy; 2026 - Equipo [nombre del equipo]</p>
+        <p><a href="nosotros.html">Nosotros</a> | <a href="contacto.html">Contacto</a></p>
+    </footer>
+
+    <script src="js/validaciones-login.js"></script>
+</body>
+</html>
