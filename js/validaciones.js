@@ -5,9 +5,7 @@ const inputNombre = document.querySelector("#nombre");
 const inputCorreo = document.querySelector("#correo");
 const inputMensaje = document.querySelector("#mensaje");
 
-// ==========================================================================
-// FUNCIONES DE VALIDACIÓN
-// ==========================================================================
+
 
 /**
  * Valida el nombre del usuario.
