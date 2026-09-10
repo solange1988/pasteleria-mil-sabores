@@ -1,30 +1,35 @@
-/* ===== Fuentes de Google (según propuesta del caso) ===== */
+/* Importación de fuentes externas desde Google Fonts (Lato para texto base, Pacifico para títulos) */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap');
 
-/* ===== Reset básico ===== */
+/* REGLAS GENERALES / RESET: Quita márgenes y paddings por defecto y aplica box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ESTILOS DEL CUERPO (BODY): Tipografía, color de fondo pastel y color de texto base */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #FFF5E1; /* Crema Pastel */
     color: #5D4037; /* Marrón oscuro */
 }
 
+/* ENCABEZADOS PRINCIPALES: Aplicación de fuente manuscrita decorativa y color chocolate */
 h1, h2, h3 {
     font-family: 'Pacifico', cursive;
     color: #8B4513; /* Chocolate */
 }
 
+/* ENLACES GENERALES: Quita el subrayado y define el color base */
 a {
     text-decoration: none;
     color: #5D4037;
 }
 
-/* ===== Header ===== */
+/* ==========================================================================
+   ENCABEZADO Y NAVEGACIÓN (HEADER)
+   ========================================================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -34,6 +39,7 @@ header {
     padding: 15px 30px;
 }
 
+/* Logotipo: Alineación en línea de imagen y texto */
 .logo {
     display: flex;
     align-items: center;
@@ -46,16 +52,19 @@ header {
     width: 70px;
 }
 
+/* Menú de navegación principal */
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
+/* Efecto hover en enlaces del menú */
 nav a:hover {
     color: #8B4513;
 }
 
+/* Zona de acciones de usuario (Login, Registro y Carrito) */
 .acciones {
     display: flex;
     align-items: center;
@@ -63,6 +72,7 @@ nav a:hover {
     font-size: 14px;
 }
 
+/* Botón flotante/destacado del carrito de compras */
 .carrito {
     background-color: #8B4513;
     color: white;
@@ -70,7 +80,9 @@ nav a:hover {
     border-radius: 20px;
 }
 
-/* ===== Hero ===== */
+/* ==========================================================================
+   SECCIÓN HERO / BANNERS DESTACADOS
+   ========================================================================== */
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +114,7 @@ nav a:hover {
     border-radius: 12px;
 }
 
-
+/* BOTÓN PRINCIPAL (Llamado a la acción) */
 .boton {
     display: inline-block;
     background-color: #FFC0CB;
@@ -117,7 +129,9 @@ nav a:hover {
     color: white;
 }
 
-/* ===== Productos ===== */
+/* ==========================================================================
+   SECCIÓN DE PRODUCTOS Y GRILLAS
+   ========================================================================== */
 .destacados {
     padding: 30px;
 }
@@ -127,6 +141,7 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
+/* Grilla flexible para alinear tarjetas de productos de forma adaptativa */
 .grid-productos {
     display: flex;
     flex-wrap: wrap;
@@ -134,6 +149,7 @@ nav a:hover {
     gap: 20px;
 }
 
+/* Tarjeta individual de producto */
 .producto {
     background-color: white;
     border-radius: 10px;
@@ -161,6 +177,7 @@ nav a:hover {
     margin: 8px 0;
 }
 
+/* Botón secundario para acciones de tarjeta (Añadir al carrito) */
 .boton-secundario {
     background-color: #8B4513;
     color: white;
@@ -174,7 +191,9 @@ nav a:hover {
     background-color: #5D4037;
 }
 
-/* ===== Video ===== */
+/* ==========================================================================
+   SECCIÓN DE CONTENIDO MULTIMEDIA
+   ========================================================================== */
 .video {
     text-align: center;
     padding: 30px;
@@ -185,7 +204,9 @@ nav a:hover {
     margin-top: 15px;
 }
 
-/* ===== Formularios ===== */
+/* ==========================================================================
+   ESTILOS DE FORMULARIOS (Contacto, Registro, Login)
+   ========================================================================== */
 .formulario {
     max-width: 500px;
     margin: 30px auto;
@@ -220,6 +241,7 @@ nav a:hover {
     font-family: 'Lato', sans-serif;
 }
 
+/* Clases de apoyo para mensajes de error de validación */
 .error {
     color: #c0392b;
     font-size: 13px;
@@ -227,7 +249,9 @@ nav a:hover {
     display: none;
 }
 
-/* ===== Footer ===== */
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
 footer {
     background-color: #8B4513;
     color: white;
@@ -239,9 +263,11 @@ footer a {
     color: white;
 }
 
-/* ===== Responsive ===== */
+/* ==========================================================================
+   MEDIA QUERIES (Diseño Responsivo)
+   ========================================================================== */
 
-/* Tablet */
+/* Tablets y pantallas medianas (768px o menos) */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -259,7 +285,7 @@ footer a {
     }
 }
 
-/* Celular */
+/* Celulares / Pantallas pequeñas (480px o menos) */
 @media (max-width: 480px) {
     .producto {
         width: 100%;

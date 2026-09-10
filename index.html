@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración para leer bien acentos y la letra Ñ -->
     <meta charset="UTF-8">
+    <!-- Ajusta el tamaño de la página al ancho de pantallas de celulares y computadores -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título principal que aparece arriba en la pestaña del navegador -->
     <title>Pastelería Mil Sabores</title>
+    
+    <!-- Archivo de estilos CSS que le da formato, colores y orden al sitio -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ENCABEZADO: Barra superior fija con el logo y el menú principal -->
     <header>
+        <!-- Sección del logo y el nombre del negocio -->
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores">
             <span>Pastelería Mil Sabores</span>
         </div>
+        
+        <!-- Menú de navegación con enlaces a todas las secciones del sitio -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,6 +32,8 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        
+        <!-- Enlaces rápidos para iniciar sesión, registrarse y ver el carrito -->
         <div class="acciones">
             <a href="login.html">Iniciar sesión</a> |
             <a href="registro.html">Registrarse</a>
@@ -29,8 +41,10 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA DE INICIO -->
     <main>
 
+        <!-- SECCIÓN HERO: Banner principal con el mensaje de bienvenida e imagen principal -->
         <section class="hero">
             <div class="hero-texto">
                 <h1>50 años endulzando a Chile</h1>
@@ -38,6 +52,7 @@
                 chilena. Famosos por participar en el récord Guinness de la torta más grande del
                 mundo en 1995, hoy renovamos nuestra tienda online para ofrecerte una experiencia
                 de compra moderna, cercana y llena de tradición.</p>
+                <!-- Botón directo que lleva al catálogo de productos -->
                 <a href="productos.html" class="boton">Ver productos</a>
             </div>
             <div class="hero-imagen">
@@ -45,10 +60,13 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DESTACADOS: Muestra las tarjetas con los productos principales -->
         <section class="destacados">
             <h2>Productos destacados</h2>
+            <!-- Contenedor que ordena los productos en formato de cuadrícula (grid) -->
             <div class="grid-productos">
 
+                <!-- Tarjeta de Producto 1 -->
                 <article class="producto">
                     <a href="producto-detalle.html">
                         <img src="assets/img/torta-chocolate.jpg" alt="Torta Cuadrada de Chocolate">
@@ -58,6 +76,7 @@
                     <button class="boton-secundario">Añadir al carrito</button>
                 </article>
 
+                <!-- Tarjeta de Producto 2 -->
                 <article class="producto">
                     <a href="producto-detalle.html">
                         <img src="assets/img/torta-manjar.jpg" alt="Torta Circular de Manjar">
@@ -67,6 +86,7 @@
                     <button class="boton-secundario">Añadir al carrito</button>
                 </article>
 
+                <!-- Tarjeta de Producto 3 -->
                 <article class="producto">
                     <a href="producto-detalle.html">
                         <img src="assets/img/mousse-chocolate.jpg" alt="Mousse de Chocolate">
@@ -76,6 +96,7 @@
                     <button class="boton-secundario">Añadir al carrito</button>
                 </article>
 
+                <!-- Tarjeta de Producto 4 -->
                 <article class="producto">
                     <a href="producto-detalle.html">
                         <img src="assets/img/tarta-santiago.jpg" alt="Tarta de Santiago">
@@ -88,14 +109,16 @@
             </div>
         </section>
 
+        <!-- SECCIÓN VIDEO: Reproductor de YouTube integrado -->
         <section class="video">
             <h2>Conoce nuestra historia</h2>
+            <!-- Etiqueta iframe para incrustar el video de YouTube en la página -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/xvH8Ap_II3A" title="Historia Pastelería Mil Sabores" frameborder="0" allowfullscreen></iframe>
-               
         </section>
 
     </main>
 
+    <!-- PIE DE PÁGINA: Derechos de autor y enlaces secundarios -->
     <footer>
         <p>Pastelería Mil Sabores &copy; 2026 - Equipo [nombre del equipo]</p>
         <p><a href="nosotros.html">Nosotros</a> | <a href="contacto.html">Contacto</a></p>

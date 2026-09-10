@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración para el soporte de caracteres en español (tildes, Ñ) -->
     <meta charset="UTF-8">
+    <!-- Ajuste de diseño para pantallas móviles y tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la pestaña del navegador -->
     <title>Registro - Pastelería Mil Sabores</title>
+    
+    <!-- Enlace a la hoja de estilos CSS compartida -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ENCABEZADO: Logotipo y menú de navegación general -->
     <header>
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores">
@@ -29,47 +36,56 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL: Formulario de Registro de Usuario -->
     <main>
         <section class="formulario">
             <h1>Crear cuenta</h1>
 
+            <!-- Formulario con novalidate para gestionar las alertas mediante JavaScript -->
             <form id="registroForm" novalidate>
 
+                <!-- Campo: Nombre completo -->
                 <div class="campo">
                     <label for="nombreCompleto">Nombre completo</label>
                     <input type="text" id="nombreCompleto" name="nombreCompleto" autocomplete="name" required>
                     <span class="error" id="errorNombreCompleto"></span>
                 </div>
 
+                <!-- Campo: Correo electrónico -->
                 <div class="campo">
                     <label for="correoRegistro">Correo electrónico</label>
                     <input type="email" id="correoRegistro" name="correoRegistro" autocomplete="email" required>
                     <span class="error" id="errorCorreoRegistro"></span>
                 </div>
 
+                <!-- Campo: Confirmación de correo -->
                 <div class="campo">
                     <label for="confirmarCorreo">Confirmar correo</label>
                     <input type="email" id="confirmarCorreo" name="confirmarCorreo" required>
                     <span class="error" id="errorConfirmarCorreo"></span>
                 </div>
 
+                <!-- Campo: Contraseña -->
                 <div class="campo">
                     <label for="contrasena">Contraseña</label>
-                   <input type="password" id="contrasena" name="contrasena" autocomplete="new-password" required>
+                    <input type="password" id="contrasena" name="contrasena" autocomplete="new-password" required>
                     <span class="error" id="errorContrasena"></span>
                 </div>
 
+                <!-- Campo: Confirmación de contraseña -->
                 <div class="campo">
                     <label for="confirmarContrasena">Confirmar contraseña</label>
                     <input type="password" id="confirmarContrasena" name="confirmarContrasena" autocomplete="new-password" required>
                     <span class="error" id="errorConfirmarContrasena"></span>
                 </div>
 
+                <!-- Campo opcional: Teléfono -->
                 <div class="campo">
                     <label for="telefono">Teléfono (opcional)</label>
                     <input type="tel" id="telefono" name="telefono" autocomplete="tel">
                 </div>
 
+                <!-- Selector de Regiones (Manejado con JS) -->
                 <div class="campo">
                     <label for="region">Región</label>
                     <select id="region" name="region">
@@ -80,6 +96,7 @@
                     </select>
                 </div>
 
+                <!-- Selector de Comunas (Poblado dinámicamente según la región) -->
                 <div class="campo">
                     <label for="comuna">Comuna</label>
                     <select id="comuna" name="comuna">
@@ -87,17 +104,20 @@
                     </select>
                 </div>
 
+                <!-- Botón de envío del formulario -->
                 <button type="submit" class="boton-secundario">Registrar</button>
 
             </form>
         </section>
     </main>
 
+    <!-- PIE DE PÁGINA: Derechos de autor y navegación secundaria -->
     <footer>
         <p>Pastelería Mil Sabores &copy; 2026 - Equipo [nombre del equipo]</p>
         <p><a href="nosotros.html">Nosotros</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
 
+    <!-- Carga de scripts: regiones.js para los select dinámicos y validaciones-registro.js para validar campos -->
     <script src="js/regiones.js"></script>
     <script src="js/validaciones-registro.js"></script>
 </body>

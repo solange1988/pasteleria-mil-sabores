@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Define los caracteres para que se lean bien los tildes y la letra Ñ -->
     <meta charset="UTF-8">
+    <!-- Hace que la página se adapte al tamaño de la pantalla de celulares y computadores -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- es para que aparesca el titulo  -->
     <title>Iniciar Sesión - Pastelería Mil Sabores</title>
+    
+    <!-- Enlace a la hoja de estilos CSS que le da los colores y el diseño a la página -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ENCABEZADO: es la parte de arriba que aparece en todos las paginas -->
     <header>
+        <!-- Logo y nombre de lapastelería -->
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores">
             <span>Pastelería Mil Sabores</span>
         </div>
+        
+        <!-- Menú de navegación  para moverse entre laspáginas -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,6 +32,8 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        
+        <!-- Botones de acceso rápido: Login, Registro y Carrito -->
         <div class="acciones">
             <a href="login.html">Iniciar sesión</a> |
             <a href="registro.html">Registrarse</a>
@@ -29,40 +41,53 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL: La parte del centro de la página -->
     <main>
+        <!-- Sección que encierra el cuadro del formulario -->
         <section class="formulario">
+            <!-- Logo pequeño centrado sobre el formulario -->
             <img src="assets/img/logo.png" alt="Logo Pastelería Mil Sabores" style="width:80px; display:block; margin:0 auto 15px;">
             <h1 style="text-align:center;">Pastelería Mil Sabores</h1>
 
+            <!-- FORMULARIO: El cuadro donde el usuario escribe sus datos -->
+            <!-- 'novalidate' evita las alertas por defecto del navegador para usar nuestras propias validaciones en JavaScript -->
             <form id="loginForm" novalidate>
 
+                <!-- Campo para ingresar el Correo -->
                 <div class="campo">
                     <label for="correoLogin">Correo</label>
                     <input type="email" id="correoLogin" name="correoLogin" maxlength="100" autocomplete="email" required>
+                    <!-- Este 'span' vacío es donde JavaScript mostrará un mensaje rojo si el correo está mal escrito -->
                     <span class="error" id="errorCorreoLogin"></span>
                 </div>
 
+                <!-- Campo para ingresar la Contraseña -->
                 <div class="campo">
                     <label for="contrasenaLogin">Contraseña</label>
-                   <input type="password" id="contrasenaLogin" name="contrasenaLogin" autocomplete="current-password" required>
+                    <input type="password" id="contrasenaLogin" name="contrasenaLogin" autocomplete="current-password" required>
+                    <!-- Este 'span' vacío mostrará un error con JS si la contraseña se deja vacía o falla -->
                     <span class="error" id="errorContrasenaLogin"></span>
                 </div>
 
+                <!-- Botón para enviar el formulario y tratar de iniciar sesión -->
                 <button type="submit" class="boton-secundario">Iniciar sesión</button>
 
             </form>
 
+            <!-- Enlace directo por si el usuario aún no se ha registrado -->
             <p style="text-align:center; margin-top:15px;">
                 ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
             </p>
         </section>
     </main>
 
+    <!-- PIE DE PÁGINA: La barra del fondo con el copyright y enlaces de contacto -->
     <footer>
         <p>Pastelería Mil Sabores &copy; 2026 - Equipo [nombre del equipo]</p>
         <p><a href="nosotros.html">Nosotros</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
 
+    <!-- JAVASCRIPT: Carga el archivo JS que revisa si los campos están bien llenados cuando presionas el botón -->
     <script src="js/validaciones-login.js"></script>
 </body>
 </html>
