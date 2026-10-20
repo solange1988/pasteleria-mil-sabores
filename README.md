@@ -49,20 +49,25 @@ src/
     PiePagina.jsx        Pie de página
     TarjetaProducto.jsx  Tarjeta de un producto (props: producto, alAgregar)
     Catalogo.jsx         Grilla de tarjetas (props: productos, alAgregar)
-    TablaCarrito.jsx     Tabla del carrito (se usa en Carrito y Checkout)
+    TablaCarrito.jsx     Tabla del carrito (se usa en Carrito, Checkout y las boletas)
+    ListaOrdenes.jsx     Tabla de órdenes + boleta (Admin, historial de usuario, Mi perfil)
+    ListaUsuarios.jsx    Usuarios registrados y su historial de compras (Admin)
     CampoTexto.jsx       Campo de formulario con etiqueta y mensaje de error
     CamposRegion.jsx     Selects de región y comuna
   pages/               Una por cada vista
-    Inicio, Productos, DetalleProducto, Carrito, Checkout,
-    Login, Registro, Contacto, Nosotros, Blogs, BlogDetalle, Admin
+    Inicio, Productos, DetalleProducto, Categorias, Ofertas, Carrito, Checkout,
+    Login, Registro, Perfil, Contacto, Nosotros, Blogs, BlogDetalle, Admin
   data/
     productos.js         "Base de datos" de productos con CRUD (crear, leer, actualizar, eliminar) en localStorage
     blogs.js             Noticias del blog
     regiones.js          Regiones y comunas
+    ordenes.js           Órdenes/boletas que se crean al pagar (localStorage)
+    usuarios.js          Usuarios registrados, inicio de sesión y perfil (localStorage)
   utils/
     carrito.js           Lógica del carrito (agregar, quitar, total...)
     validaciones.js      Reglas de los formularios (las mismas de la versión HTML)
     formato.js           Precio con formato chileno ($45.000)
+    descuentos.js        Reglas de descuento: mayores de 50 (50%), FELICES50 (10%), torta de cumpleaños Duoc
   hooks/
     useFormulario.js     Estado y validación compartidos por todos los formularios
   test/                Pruebas unitarias (*.test.js / *.test.jsx)
@@ -74,18 +79,20 @@ src/
 - **Agregar una página nueva:**
   1. Crea `src/pages/MiPagina.jsx`.
   2. En `App.jsx`, impórtala y agrega un `case 'mipagina': return <MiPagina />` dentro de `paginaActual()`.
-  3. En `Encabezado.jsx`, agrega `<Nav.Link href="#/mipagina">Mi página</Nav.Link>`.
+  3. En `Encabezado.jsx`, agrega `<Nav.Link href="#/mipagina">Mi página</Nav.Link>` (el logo ya lleva al inicio).
 - **Cambiar una regla de validación:** `src/utils/validaciones.js` (y su prueba en `src/test/validaciones.test.js`).
 - **Cambiar colores:** `src/index.css`.
 
 ### Cómo funciona la navegación
 
-Cada página tiene su dirección después del `#`: `#/productos`, `#/producto/3`, `#/blog/1`, `#/admin`...
+Cada página tiene su dirección después del `#`: `#/productos`, `#/producto/3`, `#/categoria/Veganos`, `#/ofertas`, `#/perfil`, `#/admin`...
 `App.jsx` lee esa dirección y muestra la página que corresponde. El botón "atrás" del navegador funciona.
 
 ## 4. Pruebas
 
-En total hay 38 pruebas en `src/test/`. Cubren:
+**Usuario de prueba:** `cliente@duoc.cl` / `1234`. Tiene más de 50 años, así que recibe un 50% de descuento.
+
+En total hay 94 pruebas en `src/test/`. Cubren:
 
 - **Renderizado:** la tarjeta muestra nombre, precio y stock; el catálogo dibuja una tarjeta por producto.
 - **Renderizado condicional:** "Sin stock" y botón deshabilitado; aviso de catálogo vacío; los errores aparecen solo cuando hay errores.
@@ -93,7 +100,7 @@ En total hay 38 pruebas en `src/test/`. Cubren:
 - **Estado:** el buscador filtra; los campos del formulario cambian al escribir.
 - **Eventos:** clic en botones y envío de formularios (`userEvent`).
 - **Mocks/espías:** `vi.fn()` para las funciones que llegan por props y `vi.spyOn(Storage.prototype, 'setItem')` para comprobar el guardado en localStorage.
-- **Lógica:** carrito, CRUD de productos y validaciones, incluidos los casos límite.
+- **Lógica:** carrito, CRUD de productos, órdenes, usuarios, descuentos y validaciones, incluidos los casos límite (por ejemplo, 50 años recién cumplidos).
 
 ## 5. Subir y actualizar en GitHub
 

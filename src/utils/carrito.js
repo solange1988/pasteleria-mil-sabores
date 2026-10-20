@@ -9,8 +9,9 @@ export function agregarAlCarrito(carrito, producto) {
       linea.id === producto.id ? { ...linea, cantidad: linea.cantidad + 1 } : linea,
     )
   }
-  const { id, nombre, precio, imagen } = producto
-  return [...carrito, { id, nombre, precio, imagen, cantidad: 1 }]
+  const { id, nombre, precio, precioOferta, imagen } = producto
+  // si el producto está en oferta, se cobra el precio de oferta
+  return [...carrito, { id, nombre, precio: precioOferta ?? precio, imagen, cantidad: 1 }]
 }
 
 export function quitarDelCarrito(carrito, id) {

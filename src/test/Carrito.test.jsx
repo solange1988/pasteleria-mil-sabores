@@ -53,12 +53,13 @@ describe('<Encabezado />', () => {
     expect(screen.getByRole('button', { name: 'Iniciar sesión' })).toBeInTheDocument()
   })
 
-  it('con sesión iniciada saluda al usuario y permite cerrar sesión', async () => {
+  it('con sesión iniciada muestra Mi perfil y permite cerrar sesión', async () => {
     const usuario = userEvent.setup()
     const alCerrarSesion = vi.fn()
     render(<Encabezado cantidadCarrito={0} usuario="ana@duoc.cl" alCerrarSesion={alCerrarSesion} />)
 
-    expect(screen.getByText('Hola, ana@duoc.cl')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Mi perfil' })).toHaveAttribute('href', '#/perfil')
+    expect(screen.queryByRole('button', { name: 'Iniciar sesión' })).toBeNull()
     await usuario.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
     expect(alCerrarSesion).toHaveBeenCalledTimes(1)
   })

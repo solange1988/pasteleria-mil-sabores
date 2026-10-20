@@ -27,7 +27,10 @@ function DetalleProducto({ id, alAgregar }) {
           <Badge bg="secondary" className="mb-2">{producto.categoria}</Badge>
           <h1>{producto.nombre}</h1>
           <p className="lh-lg">{producto.descripcion}</p>
-          <p className="fs-3 fw-bold">{formatearPrecio(producto.precio)}</p>
+          <p className="fs-3 fw-bold">
+            {producto.precioOferta && <del className="fs-5 fw-normal text-secondary me-2">{formatearPrecio(producto.precio)}</del>}
+            {formatearPrecio(producto.precioOferta ?? producto.precio)}
+          </p>
           <p className={agotado ? 'text-danger' : 'text-success'}>
             {agotado ? 'Sin stock' : `Stock disponible: ${producto.stock}`}
           </p>

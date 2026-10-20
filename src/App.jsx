@@ -13,6 +13,9 @@ import Nosotros from './pages/Nosotros.jsx'
 import Blogs from './pages/Blogs.jsx'
 import BlogDetalle from './pages/BlogDetalle.jsx'
 import Admin from './pages/Admin.jsx'
+import Ofertas from './pages/Ofertas.jsx'
+import Categorias from './pages/Categorias.jsx'
+import Perfil from './pages/Perfil.jsx'
 import { agregarAlCarrito, cambiarCantidad, quitarDelCarrito, contarUnidades } from './utils/carrito.js'
 
 // Navegación: la página actual sale de la URL después del "#", por ejemplo #/producto/3.
@@ -64,6 +67,9 @@ function App() {
       case '': return <Inicio alAgregar={agregar} />
       case 'productos': return <Productos alAgregar={agregar} />
       case 'producto': return <DetalleProducto id={id} alAgregar={agregar} />
+      case 'ofertas': return <Ofertas alAgregar={agregar} />
+      case 'categorias': return <Categorias alAgregar={agregar} />
+      case 'categoria': return <Categorias nombre={id && decodeURIComponent(id)} alAgregar={agregar} />
       case 'carrito':
         return (
           <Carrito
@@ -76,6 +82,7 @@ function App() {
       case 'checkout': return <Checkout carrito={carrito} usuario={usuario} alConfirmar={() => setCarrito([])} />
       case 'login': return <Login alIniciarSesion={iniciarSesion} />
       case 'registro': return <Registro />
+      case 'perfil': return <Perfil usuario={usuario} />
       case 'contacto': return <Contacto />
       case 'nosotros': return <Nosotros />
       case 'blogs': return <Blogs />

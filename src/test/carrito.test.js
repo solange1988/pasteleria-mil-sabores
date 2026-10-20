@@ -63,6 +63,12 @@ describe('carrito', () => {
     expect(resultado.map((l) => l.cantidad)).toEqual([4, 1])
   })
 
+  it('un producto en oferta se agrega con su precio de oferta', () => {
+    const resultado = agregarAlCarrito(carrito, { ...TORTA, precioOferta: 39900 })
+    expect(resultado[0].precio).toBe(39900)
+    expect(calcularTotal(resultado)).toBe(39900)
+  })
+
   it('quitarDelCarrito deja solo los demás productos', () => {
     carrito = agregarAlCarrito(agregarAlCarrito(carrito, MOUSSE), TORTA)
     const resultado = quitarDelCarrito(carrito, 5)

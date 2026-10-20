@@ -67,6 +67,22 @@ export function validarRequerido(valor) {
   return String(valor).trim() === '' ? error('Este campo es obligatorio') : OK
 }
 
+// ---------- Registro: fecha de nacimiento y código ----------
+
+// valor en formato 'AAAA-MM-DD' (lo que entrega <input type="date">)
+export function validarFechaNacimiento(valor, hoy = new Date()) {
+  if (!valor) return error('La fecha de nacimiento es obligatoria')
+  const fecha = new Date(`${valor}T00:00:00`)
+  if (Number.isNaN(fecha.getTime()) || fecha > hoy) return error('Ingresa una fecha válida')
+  if (hoy.getFullYear() - fecha.getFullYear() > 120) return error('Ingresa una fecha válida')
+  return OK
+}
+
+export function validarCodigoPromocional(valor) {
+  const texto = valor.trim().toUpperCase()
+  return texto === '' || texto === 'FELICES50' ? OK : error('El código no es válido')
+}
+
 // ---------- Admin ----------
 
 export function validarNumeroPositivo(valor) {

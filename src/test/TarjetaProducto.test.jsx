@@ -26,6 +26,14 @@ describe('<TarjetaProducto />', () => {
     expect(alAgregar).toHaveBeenCalledWith(MOUSSE)
   })
 
+  it('en oferta: muestra la insignia, el precio anterior tachado y el precio de oferta', () => {
+    render(<TarjetaProducto producto={{ ...MOUSSE, precioOferta: 4000 }} alAgregar={vi.fn()} />)
+
+    expect(screen.getByText('Oferta')).toBeInTheDocument()
+    expect(screen.getByText('$5.000').tagName).toBe('DEL')
+    expect(screen.getByText('$4.000')).toBeInTheDocument()
+  })
+
   it('sin stock: muestra "Sin stock" y deshabilita el botón (renderizado condicional)', () => {
     render(<TarjetaProducto producto={{ ...MOUSSE, stock: 0 }} alAgregar={vi.fn()} />)
 

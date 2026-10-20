@@ -35,7 +35,7 @@ describe('CRUD de productos (data/productos.js)', () => {
 
     expect(nuevo.id).toBe(17)
     expect(espiaGuardar).toHaveBeenCalledTimes(1)
-    expect(espiaGuardar).toHaveBeenCalledWith('pms_productos', expect.stringContaining('Kuchen de Nuez'))
+    expect(espiaGuardar).toHaveBeenCalledWith('pms_productos_v2', expect.stringContaining('Kuchen de Nuez'))
     expect(listarProductos()).toHaveLength(17)
   })
 
