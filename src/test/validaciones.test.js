@@ -6,6 +6,9 @@ import {
   validarNombre,
   validarMensaje,
   validarNumeroPositivo,
+  validarNombreCompleto,
+  validarCorreo,
+  validarRequerido,
 } from '../utils/validaciones.js'
 
 describe('validarCorreoPermitido', () => {
@@ -66,5 +69,32 @@ describe('validarNumeroPositivo', () => {
     expect(validarNumeroPositivo('2.5').valido).toBe(false)
     expect(validarNumeroPositivo('abc').valido).toBe(false)
     expect(validarNumeroPositivo('0').valido).toBe(true)
+  })
+})
+
+describe('otras validaciones', () => {
+  it('nombre completo: obligatorio y máximo 50 caracteres', () => {
+    expect(validarNombreCompleto('').valido).toBe(false)
+    expect(validarNombreCompleto('a'.repeat(51)).mensaje).toBe('Máximo 50 caracteres')
+    expect(validarNombreCompleto('Ana Pérez').valido).toBe(true)
+  })
+
+  it('correo general: acepta cualquier dominio con formato válido', () => {
+    expect(validarCorreo('').valido).toBe(false)
+    expect(validarCorreo('ana@correo').valido).toBe(false)
+    expect(validarCorreo('ana@empresa.com').valido).toBe(true)
+  })
+
+  it('correo permitido: máximo 100 caracteres', () => {
+    expect(validarCorreoPermitido('a'.repeat(95) + '@duoc.cl').mensaje).toBe('Máximo 100 caracteres')
+  })
+
+  it('campo requerido: no acepta solo espacios', () => {
+    expect(validarRequerido('   ').valido).toBe(false)
+    expect(validarRequerido('Los Crisantemos 123').valido).toBe(true)
+  })
+
+  it('mensaje: máximo 500 caracteres', () => {
+    expect(validarMensaje('a'.repeat(501)).valido).toBe(false)
   })
 })

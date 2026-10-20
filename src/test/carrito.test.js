@@ -57,6 +57,12 @@ describe('carrito', () => {
     expect(cambiarCantidad(carrito, 5, 0)).toHaveLength(0)
   })
 
+  it('cambiar la cantidad solo afecta al producto indicado', () => {
+    carrito = agregarAlCarrito(agregarAlCarrito(carrito, MOUSSE), TORTA)
+    const resultado = cambiarCantidad(carrito, 5, 4)
+    expect(resultado.map((l) => l.cantidad)).toEqual([4, 1])
+  })
+
   it('quitarDelCarrito deja solo los demás productos', () => {
     carrito = agregarAlCarrito(agregarAlCarrito(carrito, MOUSSE), TORTA)
     const resultado = quitarDelCarrito(carrito, 5)
