@@ -43,7 +43,7 @@ function Nosotros() {
 
       <h2 className="text-center">Nuestro Equipo</h2>
       <p className="text-center">
-        Este sitio fue desarrollado por el equipo [nombres de los integrantes], estudiantes de
+        Este sitio fue desarrollado por el equipo [desarrollado por Solange Valladares], estudiantes de
         Desarrollo Full Stack II en Duoc UC (DSY1104).
       </p>
     </Container>
