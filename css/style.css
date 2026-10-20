@@ -142,10 +142,9 @@ nav a:hover {
 }
 
 /* Grilla flexible para alinear tarjetas de productos de forma adaptativa */
-.grid-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid-productos{
+    display: grid;
+    grid-template-columns : repeat(4, 1fr);
     gap: 20px;
 }
 
