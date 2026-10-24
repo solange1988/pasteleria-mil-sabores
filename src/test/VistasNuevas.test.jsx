@@ -73,6 +73,29 @@ describe('<Admin /> pestañas de órdenes y usuarios', () => {
     expect(screen.getByText('Total pagado: $10.000')).toBeInTheDocument()
   })
 
+  it('Órdenes: la boleta se puede cerrar', async () => {
+    crearOrden({ cliente: CLIENTE, lineas: [LINEA], total: 10000 })
+    const usuario = userEvent.setup()
+    render(<Admin />)
+
+    await usuario.click(screen.getByRole('tab', { name: 'Órdenes' }))
+    await usuario.click(screen.getByRole('button', { name: 'Ver boleta' }))
+    await usuario.click(screen.getByRole('button', { name: 'Cerrar boleta' }))
+
+    expect(screen.queryByRole('heading', { name: 'Boleta #1001' })).toBeNull()
+  })
+
+  it('Productos: Restaurar productos originales deshace los cambios', async () => {
+    const usuario = userEvent.setup()
+    render(<Admin />)
+
+    await usuario.click(screen.getAllByRole('button', { name: 'Eliminar' })[0])
+    expect(screen.queryByText('Torta Cuadrada de Chocolate')).toBeNull()
+
+    await usuario.click(screen.getByRole('button', { name: 'Restaurar productos originales' }))
+    expect(screen.getByText('Torta Cuadrada de Chocolate')).toBeInTheDocument()
+  })
+
   it('Órdenes: sin compras muestra un aviso', async () => {
     const usuario = userEvent.setup()
     render(<Admin />)

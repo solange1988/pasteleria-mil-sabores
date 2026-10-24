@@ -10,6 +10,10 @@ export default defineConfig({
     // src/karma tiene las pruebas de Jasmine que ejecuta Karma (npm run test:karma), no Vitest
     exclude: [...configDefaults.exclude, 'src/karma/**'],
     coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      // Umbrales mínimos exigidos por la plantilla del informe de cobertura (80% en cada métrica)
+      thresholds: { statements: 80, branches: 80, functions: 80, lines: 80 },
       include: ['src/**/*.{js,jsx}'],
       exclude: ['src/main.jsx', 'src/test/**', 'src/karma/**'],
     },
