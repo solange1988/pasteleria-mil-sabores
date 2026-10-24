@@ -34,6 +34,7 @@ Necesitas tener instalado **Node.js** (versión 20 o más nueva) y **VS Code**.
 | `npm test` | Corre las pruebas y las vuelve a correr cada vez que guardas |
 | `npm run test:ejecutar` | Corre las pruebas una sola vez |
 | `npm run test:cobertura` | Corre las pruebas y muestra la cobertura (crea la carpeta `coverage/`; abre `coverage/index.html`) |
+| `npm run test:karma` | Corre las pruebas de Jasmine con **Karma** en Google Chrome (`src/karma/`) |
 | `npm run build` | Genera la versión final en la carpeta `dist/` |
 
 ## 3. Dónde está cada cosa (para modificar)
@@ -92,7 +93,12 @@ Cada página tiene su dirección después del `#`: `#/productos`, `#/producto/3`
 
 **Usuario de prueba:** `cliente@duoc.cl` / `1234`. Tiene más de 50 años, así que recibe un 50% de descuento.
 
-En total hay 94 pruebas en `src/test/`. Cubren:
+Hay dos ejecutores de pruebas; las dos usan la sintaxis de **Jasmine** (`describe`, `it`, `expect`):
+
+- **Karma + Jasmine** (`npm run test:karma`): 15 pruebas en `src/karma/`, que corren en Google Chrome real. Usan los espías de Jasmine (`jasmine.createSpy`, `spyOn`). Configuración en `karma.conf.cjs`. Es lo que pide la rúbrica.
+- **Vitest** (`npm run test:ejecutar`): 94 pruebas en `src/test/`, en un navegador simulado (jsdom). Es lo visto en clase y es la base del informe de cobertura.
+
+Las 94 pruebas de Vitest cubren:
 
 - **Renderizado:** la tarjeta muestra nombre, precio y stock; el catálogo dibuja una tarjeta por producto.
 - **Renderizado condicional:** "Sin stock" y botón deshabilitado; aviso de catálogo vacío; los errores aparecen solo cuando hay errores.
